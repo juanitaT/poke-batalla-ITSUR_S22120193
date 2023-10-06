@@ -33,20 +33,20 @@ public class Pokemon {
     //Métodos
     public void atacar(Pokemon oponente) {
         
-        System.out.println("Mi pokemon:" + this.nombre);
-        System.out.println("esta atacando a: " + oponente);
+        System.out.print("Mi pokemon:" + this.nombre);
+        System.out.println(" esta atacando a: " + oponente);
         
         if (this.ataque > oponente.defensa) {
             //Calcular el daño
             int damage = this.ataque - oponente.defensa;
             //Restar el daño del HP del oponente
             oponente.hp = oponente.hp - damage;
-            System.out.println("Y le causo un daño de: " + damage);
+            System.out.println("Y le causo un dano de: " + damage);
         }else{
            //TODO: ...Y si no que pasa?
         }
         System.out.println("El pokemon oponente quedo asi:" + oponente);
-
+        
         
         
         //System.out.println("Pokemon Atacando a un: " + enemigo.getClass().getName());
@@ -59,6 +59,7 @@ public class Pokemon {
 
         return this.getClass().getName() + 
                 "{tipo:" + tipo + " hp:" + hp + "}";
+        
     }
 
 }

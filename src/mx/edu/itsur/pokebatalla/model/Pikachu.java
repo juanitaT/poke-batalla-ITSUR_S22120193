@@ -40,6 +40,7 @@ public class Pikachu  extends Pokemon{
             //Logica del daño por BOLAVOLTIO
             System.out.println("Realizando BOLAVOLTIO");            
         }
+        System.out.println("");
         //TODO: otras habilidades...
     }
    
