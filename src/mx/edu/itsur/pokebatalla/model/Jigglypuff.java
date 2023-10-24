@@ -4,14 +4,22 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.Pokemon;
+import mx.edu.itsur.pokebatalla.model.moves.BesoAmoroso;
+import mx.edu.itsur.pokebatalla.model.moves.BombaHuevo;
+import mx.edu.itsur.pokebatalla.model.moves.BombaSonica;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Jigglypuff  extends Pokemon{
-
+    public enum Movimientos {
+        BOMBA_SONICA,
+        BOMBA_HUEVO,
+        BESO_AMOROSO,
+    }
     //Constructor default
     public Jigglypuff() {
         this.tipo = "NORMAL/HADA";
@@ -20,27 +28,30 @@ public class Jigglypuff  extends Pokemon{
         this.defensa = 20;
         this.nivel = 1;
         this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("BRILLO MAGICO");
-        this.habilidades.add("GIRO BOLA");
-        //....
-    }    
-    
-    //Constructor alterno 1
-    public Jigglypuff(String nombre){
+    }
+    public Jigglypuff(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
     
-    public void atacar(Pokemon oponente, String habilidad){
-        if(habilidad.equals("BRILLO MAGICO")){
-            //Logica del daño por BRILLO MAGICO
-            System.out.println("Realizando BRILLO MAGICO");
-        }else if(habilidad.equals("GIRO BOLA")){
-            //Logica del daño por GIRO BOLA
-            System.out.println("Realizando GIRO BOLA");            
+    public void atacar(Pokemon oponente, Jigglypuff.Movimientos movimientoUtilizar)
+    {
+        Movimiento instanciaMovimiento;
+        switch(movimientoUtilizar){
+            case BESO_AMOROSO:
+            instanciaMovimiento = new BesoAmoroso();
+                break;
+            case BOMBA_HUEVO:
+                instanciaMovimiento = new BombaHuevo();
+                break;
+            case BOMBA_SONICA:
+                instanciaMovimiento = new BombaSonica();
+                break;
+          
+                default:
+                throw new AssertionError();
         }
-    System.out.println("");
+         instanciaMovimiento.utilizar(this, oponente);
     }
-   
+
 }

@@ -1,11 +1,21 @@
+
+
 package mx.edu.itsur.pokebatalla.model;
-import java.util.ArrayList;
+
+import mx.edu.itsur.pokebatalla.model.moves.Contraataque;
+import mx.edu.itsur.pokebatalla.model.moves.PantallaDeLuz;
+import mx.edu.itsur.pokebatalla.model.moves.LanzaLlamas;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 /**
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Machop  extends Pokemon{
-
+    public enum Movimientos {
+    Contraataque,
+    PantallaDeLuz, //lo puede aprender de MT, DT y MO
+    LanzaLlamas,//cuando sube de nivel
+    }
     //Constructor default
     public Machop() {
         this.tipo = "LUCHA";
@@ -14,27 +24,32 @@ public class Machop  extends Pokemon{
         this.defensa = 50;
         this.nivel = 1;
         this.precision = 3;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("GOLPE ROCA");
-        this.habilidades.add("PUNTAPIE");
+
         //....
     }    
-    
-    //Constructor alterno 1
-    public Machop(String nombre){
+        public Machop(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
     
-    public void atacar(Pokemon oponente, String habilidad){
-        if(habilidad.equals("GOLPE ROCA")){
-            //Logica del daño por GOLPE ROCA
-            System.out.println("Realizando GOLPE ROCA");
-        }else if(habilidad.equals("PUNTAPIE")){
-            //Logica del daño por PUNTAPIE
-            System.out.println("Realizando PUNTAPIE");            
+    public void atacar(Pokemon oponente, Machop.Movimientos movimientoUtilizar)
+    {
+        Movimiento instanciaMovimiento;
+        switch(movimientoUtilizar){
+            case Contraataque:
+            instanciaMovimiento = new Contraataque();
+                break;
+            case PantallaDeLuz:
+                instanciaMovimiento = new PantallaDeLuz();
+                break;
+            case LanzaLlamas:
+                instanciaMovimiento = new LanzaLlamas();
+                break;
+          
+                default:
+                throw new AssertionError();
         }
-        System.out.println("");
+         instanciaMovimiento.utilizar(this, oponente);
     }
    
 }

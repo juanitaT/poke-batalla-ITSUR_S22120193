@@ -3,14 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model;
-
-import java.util.ArrayList;
+import mx.edu.itsur.pokebatalla.model.moves.PunoTrueno;
+import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
+import mx.edu.itsur.pokebatalla.model.moves.OndaTrueno;
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
  * @author FJML1983
  */
 public class Pikachu  extends Pokemon{
+ public enum Movimientos {
+        IMPACTRUENO,
+        OndaTrueno,
+        PunoTrueno,
+
+        //Otros movimientos...
+    }
 
     //Constructor default
     public Pikachu() {
@@ -20,28 +29,36 @@ public class Pikachu  extends Pokemon{
         this.defensa = 30;
         this.nivel = 1;
         this.precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("ATACKTRUENO");
-        this.habilidades.add("BOLAVOLTIO");
-        //....
-    }    
-    
+    }
+
     //Constructor alterno 1
-    public Pikachu(String nombre){
+    public Pikachu(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
-    
-    public void atacar(Pokemon oponente, String habilidad){
-        if(habilidad.equals("ATACKTRUENO")){
-            //Logica del daño por atacktrueno
-            System.out.println("Realizando ATACKTRUENO");
-        }else if(habilidad.equals("BOLAVOLTIO")){
-            //Logica del daño por BOLAVOLTIO
-            System.out.println("Realizando BOLAVOLTIO");            
+
+    public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
+
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case IMPACTRUENO:
+                instanciaMovimiento = new Impactrueno();
+                break;
+            case OndaTrueno:
+                instanciaMovimiento = new OndaTrueno();
+                break;
+            case PunoTrueno:
+                instanciaMovimiento = new PunoTrueno();
+                break;
+
+            //Otros movimientos aquí...                
+            default:
+                throw new AssertionError();
         }
-        System.out.println("");
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento.
+        instanciaMovimiento.utilizar(this, oponente);
     }
-   
+
 }

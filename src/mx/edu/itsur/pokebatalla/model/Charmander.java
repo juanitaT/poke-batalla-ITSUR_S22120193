@@ -3,42 +3,66 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model;
+import mx.edu.itsur.pokebatalla.model.moves.PunoFuego;
+import mx.edu.itsur.pokebatalla.model.moves.Llamarada;
+import mx.edu.itsur.pokebatalla.model.moves.Grunido;
 
-import java.util.ArrayList;
-
+import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 /**
  *
  * @author FJML1983
  */
+
 public class Charmander extends Pokemon {
-    public Charmander(){
+
+    /**
+     * Movimientos que puede realizar el Pokémon
+     */
+    public enum Movimientos {
+        Llamarada,
+        PunoFuego,
+        Grunido,
+        
+        //Otros movimientos...
+    }
+
+    public Charmander() {
         tipo = "FUEGO";
         hp = 39;
         ataque = 52;
         defensa = 43;
         nivel = 1;
         precision = 4;
-        this.habilidades = new ArrayList<>();
-        this.habilidades.add("MAR LLAMAS");
-        this.habilidades.add("PODER SOLAR");
     }
-    
+
     //Constructor alterno 1
-    public Charmander(String nombre){
+    public Charmander(String nombre) {
         this(); //invocando al constructor default
-        this.nombre = nombre;
+        this.nombre = nombre; 
     }
-    
-    public void atacar(Pokemon oponente, String habilidad){
-        if(habilidad.equals("MAR LLAMAS")){
-            //Logica del daño por MAR LLAMAS
-            System.out.println("Realizando MAR LLAMAS");
-        }else if(habilidad.equals("PODER SOLAR")){
-            //Logica del daño por PODER SOLAR
-            System.out.println("Realizando PODER SOLAR");            
+
+    public void atacar(Pokemon oponente, Charmander.Movimientos movimientoAUtilizar) {
+
+        //Instanciar el movimiento solicitado
+        Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case Llamarada:
+                instanciaMovimiento = new Llamarada();
+                break;
+            case PunoFuego:
+                instanciaMovimiento = new PunoFuego();
+                break;
+            case Grunido:
+                instanciaMovimiento = new Grunido();
+                break;
+
+            //Otros movimientos aquí...
+            default:
+                throw new AssertionError();
         }
-        System.out.println("");
-        //TODO: otras habilidades...
+
+        //Aplicar el movimiento
+        instanciaMovimiento.utilizar(this, oponente);
+
     }
-   
 }
