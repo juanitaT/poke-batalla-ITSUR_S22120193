@@ -13,6 +13,11 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  * @author FJML1983
  */
 public class Pikachu  extends Pokemon{
+
+    @Override
+    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
+        //move.atacar(this, oponente);
+    }
  public enum Movimientos {
         IMPACTRUENO,
         OndaTrueno,

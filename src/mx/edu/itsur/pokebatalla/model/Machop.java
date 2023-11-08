@@ -11,6 +11,11 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Machop  extends Pokemon{
+
+    @Override
+    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
+        //move.atacar(this, oponente);
+    }
     public enum Movimientos {
     Contraataque,
     PantallaDeLuz, //lo puede aprender de MT, DT y MO

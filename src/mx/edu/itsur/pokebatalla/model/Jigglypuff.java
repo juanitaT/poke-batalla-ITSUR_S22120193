@@ -15,6 +15,11 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Jigglypuff  extends Pokemon{
+
+    @Override
+    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
+        //move.atacar(this, oponente);
+    }
     public enum Movimientos {
         BOMBA_SONICA,
         BOMBA_HUEVO,

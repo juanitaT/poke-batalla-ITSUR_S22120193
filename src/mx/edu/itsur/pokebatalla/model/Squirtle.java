@@ -12,6 +12,11 @@ import mx.edu.itsur.pokebatalla.model.moves.Burbuja;
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Squirtle  extends Pokemon{
+
+    @Override
+    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
+        //move.atacar(this, oponente); 
+    }
         public enum Movimientos {
             Refugio,
             Cascada,
@@ -52,8 +57,6 @@ public class Squirtle  extends Pokemon{
                 default:
                 throw new AssertionError();
         }
-         instanciaMovimiento.utilizar(this, oponente);
-    }
-        
-   
+         instanciaMovimiento.utilizar(this, oponente);  
+}
 }

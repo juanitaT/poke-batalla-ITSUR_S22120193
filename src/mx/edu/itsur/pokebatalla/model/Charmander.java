@@ -15,6 +15,11 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 public class Charmander extends Pokemon {
 
+    @Override
+    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
+        //move.atacar(this, oponente);
+    }
+
     /**
      * Movimientos que puede realizar el Pokémon
      */

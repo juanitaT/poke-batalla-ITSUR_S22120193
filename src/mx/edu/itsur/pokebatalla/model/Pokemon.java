@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author FJML1983
  */
-public class Pokemon {
+public abstract class Pokemon {
 
     //Atributos
     protected String tipo;
@@ -44,7 +44,7 @@ public class Pokemon {
     public void recibirDanio(int danio){
         this.hp = this.hp - danio;
     }
-    
+     protected abstract void atacar(Pokemon oponente, Movimiento move);
 
     @Override
     public String toString() {
