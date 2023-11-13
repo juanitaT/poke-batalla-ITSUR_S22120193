@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemon;
+
 import mx.edu.itsur.pokebatalla.model.moves.PunoTrueno;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
 import mx.edu.itsur.pokebatalla.model.moves.OndaTrueno;
@@ -12,13 +13,9 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Pikachu  extends Pokemon{
+public class Pikachu extends Pokemon {
 
-    @Override
-    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
-        //move.atacar(this, oponente);
-    }
- public enum Movimientos {
+    public enum Movimientos {
         IMPACTRUENO,
         OndaTrueno,
         PunoTrueno,
@@ -42,10 +39,20 @@ public class Pikachu  extends Pokemon{
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
+    @Override
+    public Enum[] getMovimientos() {
+        return Pikachu.Movimientos.values();
+    }
 
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        Movimiento instanciaMovimiento;
+        Pikachu.Movimientos movimientoAUtilizar = Pikachu.Movimientos.values()[ordinalMovimiento];
+        if (this.hp <= 0) {
+                System.out.println("Pikachu esta casado y no puede realizar mas movimientos.");
+                return;
+            }
         switch (movimientoAUtilizar) {
             case IMPACTRUENO:
                 instanciaMovimiento = new Impactrueno();

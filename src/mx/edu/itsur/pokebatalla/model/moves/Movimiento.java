@@ -4,7 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.moves;
 
-import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Pokemon;
 /**
  *
  * @author juana del rosario tenorio rivera

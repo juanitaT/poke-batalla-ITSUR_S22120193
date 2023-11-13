@@ -4,12 +4,12 @@
  */
 package mx.edu.itsur.pokebatalla;
 
-import mx.edu.itsur.pokebatalla.model.Pokemons.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
-import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
-import mx.edu.itsur.pokebatalla.model.Pokemons.Jigglypuff;
-import mx.edu.itsur.pokebatalla.model.Pokemons.Machop;
-import mx.edu.itsur.pokebatalla.model.Pokemons.Squirtle;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Bullbasaur;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Pikachu;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Charmander;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Jigglypuff;
+import mx.edu.itsur.pokebatalla.model.Pokemon. Machop;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Squirtle;
 import mx.edu.itsur.pokebatalla.model.battles.Batalla;
 import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
 /**

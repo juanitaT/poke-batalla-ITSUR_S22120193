@@ -5,26 +5,29 @@
  */
 package mx.edu.itsur.pokebatalla.model.battles;
 
-import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Pokemon;
+import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 /**
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
 public class Batalla {
+
     protected Entrenador entrenador1;
     protected Entrenador entrenador2;
     protected int turno = 1;
     protected boolean batallaFinalizada = false;
 
     //Constructor
-    public Batalla(Entrenador entrenador1 , Entrenador entrenador2) {
+    public Batalla(Entrenador entrenador1, Entrenador entrenador2) {
         this.entrenador1 = entrenador1;
         this.entrenador2 = entrenador2;
-    }    
-    
+    }
+
     public void desarrollarBatalla() {
         System.out.println(" ******************************************************** LA BATTA ESTA POR DAR INICIO ********************************************************");
         System.out.println("LOS OPONENTES SON: ");
@@ -41,18 +44,15 @@ public class Batalla {
 
             System.out.println("Turno del entrenador: " + entrenadorEnTurno.getNombre());
 
-            
-            if (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0) {
-                cambiarDePokemon(entrenadorEnTurno);
-            }
-            
             if (oponente.getPokemonActual() == null) {
                 System.out.println("No hay un Pokemon seleccionado actualmente para el atacante");
                 return;
             }
-
-            
             seleccionaUnAtaque(entrenadorEnTurno, oponente.getPokemonActual());
+
+            if (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0 && turno == turno) {
+                cambiarDePokemon(entrenadorEnTurno);
+            }
 
             Pokemon pokemonEnTurno = entrenadorEnTurno.getPokemonActual();
 
@@ -60,7 +60,7 @@ public class Batalla {
                 System.out.println("¡El entrenador " + oponente.getNombre() + " ha sido derrotado!");
                 batallaFinalizada = true;
             } else {
-                
+
                 turno = (turno == 1) ? 2 : 1;
             }
         }
@@ -68,12 +68,12 @@ public class Batalla {
 
     private void eligeUnPokemon(Entrenador ent) {
         int idx = 1;
-  
+
         System.out.println("------------------------------------------------------");
         for (Pokemon pokemon : ent.getPokemonsCapturados()) {
             System.out.println(idx + ".- " + pokemon.getClass().getSimpleName());
             idx++;
-             System.out.println("------------------------------------------------------");
+            System.out.println("------------------------------------------------------");
         }
         System.out.println("");
         System.out.println("Elige un  pokemon " + ent.getNombre());

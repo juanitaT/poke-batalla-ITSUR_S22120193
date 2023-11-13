@@ -2,26 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemon;
+
 import mx.edu.itsur.pokebatalla.model.moves.Refugio;
 import mx.edu.itsur.pokebatalla.model.moves.Cascada;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.Burbuja;
+
 /**
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Squirtle  extends Pokemon{
+public class Squirtle extends Pokemon {
 
-    @Override
-    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
-        //move.atacar(this, oponente); 
+    public enum Movimientos {
+        Refugio,
+        Cascada,
+        Burbuja,
     }
-        public enum Movimientos {
-            Refugio,
-            Cascada,
-            Burbuja,
-        }
 
     //Constructor default
     public Squirtle() {
@@ -31,21 +29,33 @@ public class Squirtle  extends Pokemon{
         this.defensa = 65;
         this.nivel = 1;
         this.precision = 4;
-    }    
-    
+    }
+
     //Constructor alterno 1
-    public Squirtle(String nombre){
+    public Squirtle(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;
 
-           
     }
-     public void atacar(Pokemon oponente, Squirtle.Movimientos movimientoUtilizar)
-         {
+
+    @Override
+    public Enum[] getMovimientos() {
+        return Squirtle.Movimientos.values();
+    }
+
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        if (this.hp <= 0) {
+            System.out.println("Charmander. esta cansado y no puede realizar mas movimientos.");
+            return;
+        }
+
+        Squirtle.Movimientos movimientoUtilizar = Squirtle.Movimientos.values()[ordinalMovimiento];
         Movimiento instanciaMovimiento;
-        switch(movimientoUtilizar){
+        switch (movimientoUtilizar) {
             case Refugio:
-            instanciaMovimiento = new Refugio();
+                instanciaMovimiento = new Refugio();
                 break;
             case Cascada:
                 instanciaMovimiento = new Cascada();
@@ -53,10 +63,10 @@ public class Squirtle  extends Pokemon{
             case Burbuja:
                 instanciaMovimiento = new Burbuja();
                 break;
-          
-                default:
+
+            default:
                 throw new AssertionError();
         }
-         instanciaMovimiento.utilizar(this, oponente);  
-}
+        instanciaMovimiento.utilizar(this, oponente);
+    }
 }

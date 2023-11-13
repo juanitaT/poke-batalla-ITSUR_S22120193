@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemon;
 
 import java.util.List;
 
@@ -25,32 +25,46 @@ public abstract class Pokemon {
     Pokemon() {
     }
 //Getters
+
     public int getNivel() {
         return nivel;
     }
+
     public int getAtaque() {
         return ataque;
-    }    
-    public int getDefensa(){
+    }
+
+    public int getDefensa() {
         return defensa;
     }
-    
+
+    public int gethp() {
+        return hp;
+    }
+
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     //Métodos 
-    public void recibirDanio(int danio){
+    public void recibirDanio(int danio) {
         this.hp = this.hp - danio;
     }
-     protected abstract void atacar(Pokemon oponente, Movimiento move);
+
+    public abstract void atacar(Pokemon oponente, int ordinalMovimiento);
+
+    public abstract Enum[] getMovimientos();
 
     @Override
     public String toString() {
+        if (hp <= 0) {
+            return this.getClass().getSimpleName()
+                    + "{tipo:" + tipo + " hp:" + "0" + "}";
+        } else {
+            return this.getClass().getSimpleName()
+                    + "{tipo:" + tipo + " hp:" + hp + "}";
+        }
 
-        return this.getClass().getSimpleName() + 
-                "{tipo:" + tipo + " hp:" + hp + "}";
-        
     }
 }

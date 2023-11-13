@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemon;
 
 import mx.edu.itsur.pokebatalla.model.moves.Acido;
 import mx.edu.itsur.pokebatalla.model.moves.Toxico;
@@ -13,17 +13,13 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Bullbasaur  extends Pokemon{
+public class Bullbasaur extends Pokemon {
 
-    @Override
-    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
-               //move.atacar(this, oponente);
-    }
-        public enum Movimientos {
+    public enum Movimientos {
         Toxico,
         Acido,
         HojaAfilada,
-        
+
     }
 
     public Bullbasaur() {
@@ -41,12 +37,24 @@ public class Bullbasaur  extends Pokemon{
         this.nombre = nombre;
 
     }
-     public void atacar(Pokemon oponente, Bullbasaur.Movimientos movimientoAUtilizar) {
 
+    @Override
+    public Enum[] getMovimientos() {
+        return Bullbasaur.Movimientos.values();
+    }
+
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        
+        if (this.hp <= 0) {
+            System.out.println("Bullbasaur. esta cansado y no puede realizar mas movimientos.");
+            return;
+        }
+        Bullbasaur.Movimientos movimientoAUtilizar = Bullbasaur.Movimientos.values()[ordinalMovimiento];
         //Instanciar el movimiento solicitado
         Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
-            case Acido: 
+            case Acido:
                 instanciaMovimiento = new Acido();
                 break;
             case Toxico:
@@ -54,7 +62,7 @@ public class Bullbasaur  extends Pokemon{
                 break;
             case HojaAfilada:
                 instanciaMovimiento = new HojaAfilada();
-                 break;
+                break;
 
             //Otros movimientos aquí...
             default:
@@ -62,8 +70,8 @@ public class Bullbasaur  extends Pokemon{
         }
 
         //Aplicar el movimiento
-        instanciaMovimiento.utilizar(this, oponente);
+         instanciaMovimiento.utilizar(this, oponente);
 
     }
-   
+
 }

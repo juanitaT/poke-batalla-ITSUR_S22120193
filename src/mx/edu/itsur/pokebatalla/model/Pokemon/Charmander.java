@@ -2,23 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mx.edu.itsur.pokebatalla.model;
+package mx.edu.itsur.pokebatalla.model.Pokemon;
+
 import mx.edu.itsur.pokebatalla.model.moves.PunoFuego;
 import mx.edu.itsur.pokebatalla.model.moves.Llamarada;
 import mx.edu.itsur.pokebatalla.model.moves.Grunido;
 
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
+
 /**
  *
  * @author FJML1983
  */
 
 public class Charmander extends Pokemon {
-
-    @Override
-    protected void atacar(Pokemon oponente, mx.edu.itsur.pokebatalla.model.Movimiento move) {
-        //move.atacar(this, oponente);
-    }
 
     /**
      * Movimientos que puede realizar el Pokémon
@@ -27,7 +24,7 @@ public class Charmander extends Pokemon {
         Llamarada,
         PunoFuego,
         Grunido,
-        
+
         //Otros movimientos...
     }
 
@@ -43,12 +40,23 @@ public class Charmander extends Pokemon {
     //Constructor alterno 1
     public Charmander(String nombre) {
         this(); //invocando al constructor default
-        this.nombre = nombre; 
+        this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Charmander.Movimientos movimientoAUtilizar) {
+    @Override
+    public Enum[] getMovimientos() {
+        return Charmander.Movimientos.values();
+    }
 
-        //Instanciar el movimiento solicitado
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+
+        if (this.hp <= 0) {
+            System.out.println("Charmander. esta cansado y no puede realizar mas movimientos.");
+            return;
+        }
+
+        Charmander.Movimientos movimientoAUtilizar = Charmander.Movimientos.values()[ordinalMovimiento];
         Movimiento instanciaMovimiento;
         switch (movimientoAUtilizar) {
             case Llamarada:

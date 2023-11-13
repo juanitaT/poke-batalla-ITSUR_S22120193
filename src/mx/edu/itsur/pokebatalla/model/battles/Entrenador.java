@@ -5,7 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.battles;
 
-import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
+import mx.edu.itsur.pokebatalla.model.Pokemon.Pokemon;
 import java.util.ArrayList;
 import java.util.List;
 
