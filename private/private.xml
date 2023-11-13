@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Machop.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Movimiento.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/MovimientoEstado.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Cascada.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Acido.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/BesoAmoroso.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/Main.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/OndaTrueno.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Toxico.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/BombaSonica.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Charmander.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Llamarada.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/battles/Batalla.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/MovimientoEspecial.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/BombaHuevo.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Squirtle.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Burbuja.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Jigglypuff.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Grunido.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Impactrueno.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/PantallaDeLuz.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/LanzaLlamas.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Bullbasaur.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/MovimientoFisico.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/PunoTrueno.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Refugio.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/PunoFuego.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/HojaAfilada.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/battles/Entrenador.java</file>
+            <file>file:/C:/Users/TR/Desktop/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Contraataque.java</file>
+        </group>
+    </open-files>
+</project-private>

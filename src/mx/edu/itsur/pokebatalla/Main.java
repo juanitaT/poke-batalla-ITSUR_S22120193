@@ -4,12 +4,14 @@
  */
 package mx.edu.itsur.pokebatalla;
 
-import mx.edu.itsur.pokebatalla.model.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.Pikachu;
-import mx.edu.itsur.pokebatalla.model.Charmander;
-import mx.edu.itsur.pokebatalla.model.Jigglypuff;
-import mx.edu.itsur.pokebatalla.model.Machop;
-import mx.edu.itsur.pokebatalla.model.Squirtle;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Bullbasaur;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Jigglypuff;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Machop;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Squirtle;
+import mx.edu.itsur.pokebatalla.model.battles.Batalla;
+import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
 /**
  *
  * @author juanita tenorio rivera
@@ -17,10 +19,10 @@ import mx.edu.itsur.pokebatalla.model.Squirtle;
 public class Main {
 
     /**
-     * @param args the command line arguments
+     * @author JUANA DEL ROSARIO TENORIO RIVERA
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         System.out.println("Hello PokeBatalla!");
          
         Pikachu pikachuSalvaje = new Pikachu();
@@ -36,6 +38,20 @@ public class Main {
         bullbasaurSalvaje.setNombre("leo");
         pikachuSalvaje.setNombre("Pedro");
         charmanderSalvaje.setNombre("mauricio");
+        
+         Entrenador ent1 = new Entrenador("Mario");
+        ent1.capturarPokemon(pikachuSalvaje);
+        ent1.capturarPokemon(jigglypuffSalvaje);
+
+        Entrenador ent2 = new Entrenador("Dennis");
+        ent2.capturarPokemon(machopSalvaje);
+        ent2.capturarPokemon(squirtleSalvaje);
+        
+        Batalla x = new Batalla(ent1, ent2);
+        x.desarrollarBatalla();
+        
+        
+        /*
         System.out.println("################################################################");
         
 System.out.println("Juanita va rumbo a su casa, pero escucho un ruido extrano.... ");
@@ -85,5 +101,6 @@ charmanderSalvaje.atacar(bullbasaurSalvaje, Charmander.Movimientos.PunoFuego);
         System.out.println("¡¡¡AQUI TERMINA LA BATALLA!!!");
         System.out.println("PARTE 2?");
     } 
-    
+    */
+}
 }
