@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/moves/Movimiento.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemon/Charmander.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemon/Jigglypuff.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/battles/Batalla.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemon/Machop.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/battles/Entrenador.java</file>
-            <file>file:/C:/Users/CC-01/Desktop/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/Main.java</file>
+            <file>file:/C:/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Jigglypuff.java</file>
+            <file>file:/C:/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Squirtle.java</file>
+            <file>file:/C:/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Pikachu.java</file>
+            <file>file:/C:/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/Pokemons/Machop.java</file>
+            <file>file:/C:/juanita/poke-batalla-ITSUR_S22120193/poke-batalla-ITSUR_S22120193/src/mx/edu/itsur/pokebatalla/model/battles/Batalla.java</file>
         </group>
     </open-files>
 </project-private>

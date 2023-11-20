@@ -5,7 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.battles;
 
-import mx.edu.itsur.pokebatalla.model.Pokemon.Pokemon;
+import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class Entrenador {
     public Entrenador(String nombre) {
         this.nombre = nombre;
         this.pokemonsCapturados = new ArrayList<>();
-        this.pokemonsCapturados = new ArrayList<>();
+ 
     }
 
     public boolean capturarPokemon(Pokemon p) {
