@@ -36,7 +36,7 @@ public class Batalla {
             try {
                 eligeUnPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  En tu mochila, elige alguno de ellos");
+                System.out.println("Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila, elige alguno de ellos");
                 entrenador1.setPokemonActual(null);
             }
         } while (entrenador1.getPokemonActual() == null);
@@ -45,7 +45,7 @@ public class Batalla {
             try {
                 eligeUnPokemon(entrenador2);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  En tu mochila, elige alguno de ellos");
+                System.out.println("Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila, elige alguno de ellos");
                 entrenador2.setPokemonActual(null);
             }
         } while (entrenador2.getPokemonActual() == null);
@@ -66,12 +66,12 @@ public class Batalla {
                 cambiarDePokemon(entrenadorEnTurno);
             }
             while (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0) {
-                    System.out.println("Alto!!! No puedes avanzar sin cambiar de Pokemon.");
+                    System.out.println("Alto!!! No puedes avanzar sin cambiar de Pokemons. Porfavor escoge correctamente uno.");
                     cambiarDePokemon(entrenadorEnTurno);
                 }
 
             if (oponente.estaDerrotado()) {
-                System.out.println("¡El entrenador " + oponente.getNombre() + " ha sido derrotado por: " );
+                System.out.println("¡El entrenador " + oponente.getNombre());
             System.out.println(" <------------------- LA BATALLA A FINALIZADO -------------------> ");
             batallaFinalizada = true;
             } else {
