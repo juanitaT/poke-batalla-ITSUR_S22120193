@@ -31,9 +31,10 @@ public class Pikachu  extends Pokemon implements Serializable{
         this.defensa = 30;
         this.nivel = 1;
         this.precision = 4;
-    }
+    } 
 
     //Constructor alterno 1
+    //especificamnete aqui se encuentra la sobre carga de metodos
     public Pikachu(String nombre) {
         this(); //invocando al constructor default
         this.nombre = nombre;

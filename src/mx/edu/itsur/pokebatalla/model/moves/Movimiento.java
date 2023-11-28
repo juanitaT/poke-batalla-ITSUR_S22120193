@@ -9,6 +9,8 @@ import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
  *
  * @author juana del rosario tenorio rivera
  */
+//LA HERENCIA SE APLICO EN LA CLASE MOVIMIENTO, EJEMPLO: SERIA TODOS LOS MOVIMIENTOS QUE SE AGREGARON
+//
 public abstract class Movimiento {
     enum TiposDeMovimiento {
         //Primera Generación

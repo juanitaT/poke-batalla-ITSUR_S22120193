@@ -24,7 +24,8 @@ public class Main implements Serializable {
         Batalla poke = FileManager.CargarPartida();
         System.out.println("Hello PokeBatalla!");
         if (poke == null) {
-
+            //la sobre carga de metodos seria cuando utilizas varias veces un metodo por ejemplo los pokemones 
+            //que se puede usar en varias ocasiones varias veces.
             Pikachu pikachuSalvaje = new Pikachu();
             Charmander charmanderSalvaje = new Charmander();
             Bullbasaur bullbasaurSalvaje = new Bullbasaur();
