@@ -9,25 +9,31 @@ import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
+import mx.edu.itsur.pokebatalla.model.utils.FileManager;
 /**
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Batalla {
+public class Batalla implements Serializable{
+
     protected Entrenador entrenador1;
     protected Entrenador entrenador2;
     protected int turno = 1;
     protected boolean batallaFinalizada = false;
 
     //Constructor
-    public Batalla(Entrenador entrenador1 , Entrenador entrenador2) {
+    public Batalla(Entrenador entrenador1, Entrenador entrenador2) {
         this.entrenador1 = entrenador1;
         this.entrenador2 = entrenador2;
-    }    
-    
+    }
+    public void GuardarProgreso(){
+        FileManager.batallaGuardada(this);
+    }
+
     public void desarrollarBatalla() {
         System.out.println(" <<<< LA BATTA ESTA POR DAR INICIO >>>> ");
-        System.out.println("LOS OPONENTES SON: ");
+        System.out.println("LOS OPONENTES PARA ESTA BATALLA QUE DARA INICIO A UNA GUERRA SON: ");
         System.out.println(entrenador1.getNombre() + " <----- V.S -----> " + entrenador2.getNombre());
 
         System.out.println("");
@@ -36,7 +42,8 @@ public class Batalla {
             try {
                 eligeUnPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila, elige alguno de ellos");
+                System.out.println(entrenador1.getNombre() + " Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila,");
+                System.out.println("elige alguno de ellos, para que pueda seguir la batalla.");
                 entrenador1.setPokemonActual(null);
             }
         } while (entrenador1.getPokemonActual() == null);
@@ -45,7 +52,9 @@ public class Batalla {
             try {
                 eligeUnPokemon(entrenador2);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila, elige alguno de ellos");
+                System.out.println(entrenador2.getNombre() + " Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  pokemons en tu mochila,");
+                                System.out.println("elige alguno de ellos, para que pueda seguir la batalla.");
+
                 entrenador2.setPokemonActual(null);
             }
         } while (entrenador2.getPokemonActual() == null);
@@ -53,39 +62,40 @@ public class Batalla {
         while (!batallaFinalizada) {
             Entrenador entrenadorEnTurno = (turno == 1) ? entrenador1 : entrenador2;
             Entrenador oponente = (turno == 1) ? entrenador2 : entrenador1;
-             System.out.println("------------------------------------------------------");
-            System.out.println("Turno del entrenador: " + entrenadorEnTurno.getNombre());
-            
+            System.out.println("------------------------------------------------------");
+            System.out.println("Ahora es el turno del entrenador: " + entrenadorEnTurno.getNombre() + ", Al otro oponente se le pide que espere su turno.");
+
             if (oponente.getPokemonActual() == null) {
-                System.out.println("No hay un Pokemon seleccionado actualmente para el atacante");
+                System.out.println(entrenadorEnTurno.getNombre() + "No tienes un Pokemon seleccionado actualmente para el atacante");
+                System.out.println("Porfavor escoge un pokemon para que esta batalla continue y pueda haber un ganador.");
                 return;
             }
-           
+
             seleccionaUnAtaque(entrenadorEnTurno, oponente.getPokemonActual());
             if (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0) {
                 cambiarDePokemon(entrenadorEnTurno);
             }
             while (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0) {
-                    System.out.println("Alto!!! No puedes avanzar sin cambiar de Pokemons. Porfavor escoge correctamente uno.");
-                    cambiarDePokemon(entrenadorEnTurno);
-                }
+                System.out.println("Alto!!!" + entrenadorEnTurno.getNombre() + " No puedes avanzar sin cambiar de Pokemons.");
+                System.out.println("Porfavor escoge correctamente uno para seguir con la batalla...");
+                cambiarDePokemon(entrenadorEnTurno);
+            }
 
             if (oponente.estaDerrotado()) {
-                System.out.println("¡El entrenador " + oponente.getNombre());
-            System.out.println(" <------------------- LA BATALLA A FINALIZADO -------------------> ");
-            batallaFinalizada = true;
+                System.out.println("¡El entrenador " + oponente.getNombre()+ " lamentablemente ha sido derrotado por el/la oponente " +entrenadorEnTurno.getNombre());
+                System.out.println(" <------------------- LA BATALLA A FINALIZADO -------------------> ");
+                batallaFinalizada = true;
             } else {
-                
+               GuardarProgreso();
                 turno = (turno == 1) ? 2 : 1;
             }
         }
-    }
-
-    private void eligeUnPokemon(Entrenador ent) {
+    } 
+private void eligeUnPokemon(Entrenador ent) {
         int idx = 1;
         System.out.println("------------------------------------------------------");
         for (Pokemon pokemon : ent.getPokemonsCapturados()) {
-            System.out.println(idx + ".- " + pokemon.getClass().getSimpleName());
+            System.out.println(idx + ".- " + pokemon.getClass().getSimpleName() + " " + pokemon.gethp());
             idx++;
             System.out.println("------------------------------------------------------");
 

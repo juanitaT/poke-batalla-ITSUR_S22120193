@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 import mx.edu.itsur.pokebatalla.model.moves.BesoAmoroso;
 import mx.edu.itsur.pokebatalla.model.moves.BombaHuevo;
@@ -14,7 +15,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Jigglypuff  extends Pokemon{
+public class Jigglypuff  extends Pokemon implements Serializable{
 
     public enum Movimientos {
         BOMBA_SONICA,

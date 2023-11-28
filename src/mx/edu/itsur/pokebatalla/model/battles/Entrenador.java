@@ -5,6 +5,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.battles;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pokemon;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Entrenador {
+public class Entrenador implements Serializable{
     //Atributos
 
     protected String nombre;

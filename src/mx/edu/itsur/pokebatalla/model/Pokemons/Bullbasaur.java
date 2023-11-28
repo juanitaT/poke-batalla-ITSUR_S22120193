@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.Acido;
 import mx.edu.itsur.pokebatalla.model.moves.Toxico;
 import mx.edu.itsur.pokebatalla.model.moves.HojaAfilada;
@@ -13,7 +14,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Bullbasaur  extends Pokemon{
+public class Bullbasaur  extends Pokemon implements Serializable{
 
         public enum Movimientos {
         Toxico,

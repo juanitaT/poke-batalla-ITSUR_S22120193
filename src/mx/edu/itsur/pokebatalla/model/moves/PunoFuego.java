@@ -8,7 +8,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class PunoFuego extends Movimiento {
+public class PunoFuego extends MovimientoFisico {
             public PunoFuego() {
         this.tipo = Movimiento.TiposDeMovimiento.FUEGO;
         this.potencia = 75;

@@ -8,7 +8,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Grunido extends Movimiento{
+public class Grunido extends MovimientoEstado{
            public Grunido() {
         this.tipo=Movimiento.TiposDeMovimiento.FUEGO;
         this.potencia = 0;

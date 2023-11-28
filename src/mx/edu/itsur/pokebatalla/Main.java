@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Bullbasaur;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Pikachu;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Charmander;
@@ -12,45 +13,45 @@ import mx.edu.itsur.pokebatalla.model.Pokemons.Machop;
 import mx.edu.itsur.pokebatalla.model.Pokemons.Squirtle;
 import mx.edu.itsur.pokebatalla.model.battles.Batalla;
 import mx.edu.itsur.pokebatalla.model.battles.Entrenador;
+import mx.edu.itsur.pokebatalla.model.utils.FileManager;
+
 /**
  *
  * @author juanita tenorio rivera
  */
-public class Main {
-
-    /**
-     * @author JUANA DEL ROSARIO TENORIO RIVERA
-     */
+public class Main implements Serializable {
     public static void main(String[] args) {
-        
+        Batalla poke = FileManager.CargarPartida();
         System.out.println("Hello PokeBatalla!");
-         
-        Pikachu pikachuSalvaje = new Pikachu();
-        Charmander charmanderSalvaje = new Charmander() ;
-        Bullbasaur bullbasaurSalvaje = new Bullbasaur();
-        Jigglypuff jigglypuffSalvaje = new Jigglypuff();
-        Machop machopSalvaje = new Machop();
-        Squirtle squirtleSalvaje= new Squirtle();
- 
-        squirtleSalvaje.setNombre("blue");
-        machopSalvaje.setNombre("nenis");
-        jigglypuffSalvaje.setNombre("leonardo");
-        bullbasaurSalvaje.setNombre("leo");
-        pikachuSalvaje.setNombre("Pedro");
-        charmanderSalvaje.setNombre("mauricio");
-        
-         Entrenador ent1 = new Entrenador("Mario");
-        ent1.capturarPokemon(pikachuSalvaje);
-        ent1.capturarPokemon(jigglypuffSalvaje);
+        if (poke == null) {
 
-        Entrenador ent2 = new Entrenador("Dennis");
-        ent2.capturarPokemon(machopSalvaje);
-        ent2.capturarPokemon(squirtleSalvaje);
-        
-        Batalla x = new Batalla(ent1, ent2);
-        x.desarrollarBatalla();
-        
-        
+            Pikachu pikachuSalvaje = new Pikachu();
+            Charmander charmanderSalvaje = new Charmander();
+            Bullbasaur bullbasaurSalvaje = new Bullbasaur();
+            Jigglypuff jigglypuffSalvaje = new Jigglypuff();
+            Machop machopSalvaje = new Machop();
+            Squirtle squirtleSalvaje = new Squirtle();
+
+            squirtleSalvaje.setNombre("blue");
+            machopSalvaje.setNombre("nenis");
+            jigglypuffSalvaje.setNombre("leonardo");
+            bullbasaurSalvaje.setNombre("leo");
+            pikachuSalvaje.setNombre("Pedro");
+            charmanderSalvaje.setNombre("mauricio");
+
+            Entrenador ent1 = new Entrenador("Mario");
+            ent1.capturarPokemon(pikachuSalvaje);
+            ent1.capturarPokemon(jigglypuffSalvaje);
+
+            Entrenador ent2 = new Entrenador("Dennis");
+            ent2.capturarPokemon(machopSalvaje);
+            ent2.capturarPokemon(squirtleSalvaje);
+
+            poke = new Batalla(ent1, ent2);
+
+        }
+        poke.desarrollarBatalla();
+
         /*
         System.out.println("################################################################");
         
@@ -101,6 +102,6 @@ charmanderSalvaje.atacar(bullbasaurSalvaje, Charmander.Movimientos.PunoFuego);
         System.out.println("¡¡¡AQUI TERMINA LA BATALLA!!!");
         System.out.println("PARTE 2?");
     } 
-    */
-}
+         */
+    }
 }

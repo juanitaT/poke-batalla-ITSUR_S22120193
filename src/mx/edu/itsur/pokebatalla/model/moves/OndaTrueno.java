@@ -8,7 +8,7 @@ package mx.edu.itsur.pokebatalla.model.moves;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class OndaTrueno extends Movimiento {
+public class OndaTrueno extends MovimientoEstado{
                 public OndaTrueno() {
         this.tipo = Movimiento.TiposDeMovimiento.ELECTRICO;
         this.potencia = 0;

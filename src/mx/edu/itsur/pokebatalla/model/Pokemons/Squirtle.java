@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.Refugio;
 import mx.edu.itsur.pokebatalla.model.moves.Cascada;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
@@ -11,7 +12,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Burbuja;
  *
  * @author JUANA DEL ROSARIO TENORIO RIVERA
  */
-public class Squirtle  extends Pokemon{
+public class Squirtle  extends Pokemon implements Serializable{
 
         public enum Movimientos {
             Refugio,

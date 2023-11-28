@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.edu.itsur.pokebatalla.model.Pokemons;
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.PunoTrueno;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
 import mx.edu.itsur.pokebatalla.model.moves.OndaTrueno;
@@ -12,7 +13,7 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Pikachu  extends Pokemon{
+public class Pikachu  extends Pokemon implements Serializable{
 
  public enum Movimientos {
         IMPACTRUENO,
